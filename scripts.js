@@ -1,14 +1,20 @@
-// Mostrar mensagem de boas vindas 
+// Mostrar mensagem de boas vindas e muda a cor de fundo
 function welcome() {
             let date = new Date()
             let hour = date.getHours()
             let h1 = document.querySelector(`h1`)
+            let body = document.querySelector('body')
 
             if(hour <= 12) {
+                body.style.background = "yellow"
                 h1.innerHTML = `BOm DIa`
+
             }else if(hour <= 18 && hour >= 12) {
+                body.style.background = "orange"
                 h1.innerHTML = "Boa Tarde"
+
             }else if(hour <= 24 && hour >= 18) {
+                body.style.background = "gray"
                 h1.innerHTML = "Boa noite"
             }
         }
