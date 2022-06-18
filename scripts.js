@@ -1,59 +1,75 @@
-       function time() {
+// Mostrar mensagem de boas vindas 
+function welcome() {
+            let date = new Date()
+            let hour = date.getHours()
+            let h1 = document.querySelector(`h1`)
+
+            if(hour <= 12) {
+                h1.innerHTML = `BOm DIa`
+            }else if(hour <= 18 && hour >= 12) {
+                h1.innerHTML = "Boa Tarde"
+            }else if(hour <= 24 && hour >= 18) {
+                h1.innerHTML = "Boa noite"
+            }
+        }
+        welcome()
+
+        // RELOGIO ======================
+        function time() {
             let time = document.getElementById('time')
 
             let date = new Date()
             let hour = date.getHours()
             let min = date.getMinutes()
             let sec = date.getSeconds()
-            let mil = date.getMilliseconds()
-        
 
-            time.innerHTML = `<p>${hour}:${min}:${sec}:${mil}</p>`
+            time.innerHTML = `
+            <p>${hour} horas<br/>
+                ${min} minutos<br/>
+                ${sec} segundos
+            </p>`
         }
-
         setInterval(() => {
-                time()
-            },10)
+            time()
+        }, 10)
 
+        // Mostrar o dia da semana =============================
         function week() {
             let date = new Date()
             let day = date.getDay() //Captar dia da semana
 
-            let dia = document.getElementById('day') 
+            let dia = document.getElementById('day')
 
-            switch(day) {
+            switch (day) {
                 case 0:
-                    console.log("Segunda-feira")
                     dia.innerText = "Segunda-feira"
                     break;
                 case 1:
-                    console.log("Terça-feira")
+                
                     dia.innerText = "Terça-feira"
                     break;
                 case 2:
-                    console.log("Quarta-feira")
+                    
                     dia.innerText = "Quarta-feira"
                     break;
                 case 3:
-                    console.log("Quinta-feira")
+                    
                     dia.innerText = "Quinta-feira"
                     break;
                 case 4:
-                    console.log("Sexta-feira")
+                
                     dia.innerText = "Sexta-feira"
                     break;
                 case 5:
-                    console.log("Sabado")
                     dia.innerText = "Sabado"
                     break;
                 case 6:
-                    console.log("Domingo")
+
                     dia.innerText = "Domingo"
                     break;
                 default:
-                    console.log('Dia da semana inexistente')
+                    console.log('ERROR 404')
                     break;
             }
         }
-
         week()
