@@ -7,15 +7,15 @@ function welcome() {
 
             if(hour <= 12) {
                 body.style.background = "yellow"
-                h1.innerHTML = `BOm DIa`
+                h1.innerHTML = 'BOm DIa"
 
             }else if(hour <= 18 && hour >= 12) {
                 body.style.background = "orange"
-                h1.innerHTML = "Boa Tarde"
+                h1.innerHTML = "Tardizinha"
 
             }else if(hour <= 24 && hour >= 18) {
                 body.style.background = "gray"
-                h1.innerHTML = "Boa noite"
+                h1.innerHTML = "De madrugada emt haaa"
             }
         }
         welcome()
